@@ -1,4 +1,4 @@
-package ru.molcom.dao;
+package ru.molcom.dao.interfaces;
 
 import ru.molcom.entity.User;
 
