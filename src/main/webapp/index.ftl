@@ -6,15 +6,22 @@
 </head>
 <body>
     <h1>Тестовое приложение</h1>
-<h2>123</h2>
-<h3>бла-бла</h3>
 
-
-    <a href="#" id="hello">Хелло</a>
+    <p>
+        <a href="#" id="hello">Хелло</a>
+    </p>
+    <p>
+        <a href="#" id="users">Пользователи</a>
+    </p>
+    <p>
+        <a href="#" id="add_user">Создать пользователя</a>
+    </p>
 
     <script type="text/javascript">
 
         document.getElementById("hello").href= window.location.href  + "hello";
+        document.getElementById("users").href= window.location.href  + "users";
+        document.getElementById("add_user").href= window.location.href  + "add_user";
 
     </script>
 </body>

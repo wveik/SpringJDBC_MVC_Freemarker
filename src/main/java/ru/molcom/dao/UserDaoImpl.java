@@ -17,4 +17,32 @@ public class UserDaoImpl implements UserDao {
         String sql = "SELECT * FROM userr";
         return jdbcTemplate.query(sql, new UserMapper());
     }
+
+    public void save(User user) {
+        String sql = "INSERT INTO public.userr(" +
+                "name, email, age) " +
+                "VALUES (?, ?, ?);";
+
+        jdbcTemplate.update(sql, user.getName(), user.getEmail(), user.getAge());
+    }
+
+    public User getbyId(Long id) {
+        String sql = "SELECT * FROM userr WHERE id=?";
+
+        return jdbcTemplate.queryForObject(sql, new UserMapper(), id);
+    }
+
+    public void delete(Long id) {
+        String sql = "DELETE FROM public.userr WHERE id=?;";
+
+        jdbcTemplate.update(sql, id);
+    }
+
+    public void update(User user) {
+        String sql = "UPDATE public.userr " +
+                "SET name=?, email=?, age=? " +
+                "WHERE id=?;";
+
+        jdbcTemplate.update(sql, user.getName(), user.getEmail(), user.getAge(), user.getId());
+    }
 }

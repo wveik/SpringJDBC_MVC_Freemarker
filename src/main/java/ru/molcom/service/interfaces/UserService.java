@@ -1,16 +1,16 @@
-package ru.molcom.dao.interfaces;
+package ru.molcom.service.interfaces;
 
 import ru.molcom.entity.User;
 
 import java.util.List;
 
-public interface UserDao {
+public interface UserService {
 
     List<User> findAll();
 
     void save(User user);
 
-    User getbyId(Long id);
+    User getById(Long id);
 
     void delete(Long id);
 

@@ -5,6 +5,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import ru.molcom.dao.UserDaoImpl;
+import ru.molcom.dao.interfaces.UserDao;
+import ru.molcom.service.UserServiceImpl;
+import ru.molcom.service.interfaces.UserService;
 
 import javax.sql.DataSource;
 
@@ -29,5 +33,15 @@ public class SpringConfig {
         dataSource.setDriverClassName("org.postgresql.Driver");
 
         return dataSource;
+    }
+
+    @Bean
+    public UserDao getUserDao() {
+        return new UserDaoImpl();
+    }
+
+    @Bean
+    public UserService getUserService() {
+        return new UserServiceImpl();
     }
 }
