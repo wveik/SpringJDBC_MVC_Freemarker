@@ -20,8 +20,8 @@
                 <td>${user.email}</td>
                 <td>${user.age}</td>
 
-                <td><a href="#" attr_type="delete">Delete</a></td>
-                <td><a href="#" attr_type="update">Update</a></td>
+                <td><a href="#" class="id_user" attr_id="${user.id}" attr_type="delete">Delete</a></td>
+                <td><a href="#" class="id_user"  attr_id="${user.id}" attr_type="update">Update</a></td>
             </tr>
         </#list>
     </table>

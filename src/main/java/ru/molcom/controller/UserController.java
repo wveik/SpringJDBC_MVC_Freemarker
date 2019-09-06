@@ -57,7 +57,7 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @PostMapping("/edit_user")
+    @PostMapping("/update")
     public String updateUser(@ModelAttribute("user") User user) {
         userService.update(user);
         return "redirect:/user/" + user.getId();

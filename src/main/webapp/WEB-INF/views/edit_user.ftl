@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form name="user" method="post">
+<form name="user" id="main_form" action="#" method="post">
     <p>Id</p>
     <input title="Name" type="text" name="id" value="${user.id}">
     <p>Name</p>
@@ -21,4 +21,17 @@
 </form>
 
 </body>
+
+<script>
+    var frm = document.getElementById('main_form') || null;
+    if (frm) {
+        var url = window.location.href;
+
+        var to = url.lastIndexOf('/');
+        to = to == -1 ? url.length : to + 1;
+        url = url.substring(0, to);
+
+        frm.action = url;
+    }
+</script>
 </html>
